@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -59,6 +59,16 @@ const SignupLogin = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
+  useEffect(() => {
+    // Clear only the sign-up form fields when switching to the sign-in tab
+    if (mode === "signin") {
+      setDob(null);
+      setFirstName("");
+      setLastName("");
+      setRollNo("");
+    }
+  }, [mode]);
+
   const handleModeChange = (event, newMode) => {
     if (newMode !== null) {
       setMode(newMode);
@@ -99,12 +109,18 @@ const SignupLogin = () => {
         const message = isSignUp
           ? "User created successfully. Please log in."
           : "Login successful!";
-        login(response.data.token); // Login user by setting the token
-        setDialogContent(message);
-        setDialogOpen(true);
-        if (!isSignUp) {
+
+        // If sign-up was successful, switch to "signin" mode
+        if (isSignUp) {
+          setMode("signin");
+        } else {
+          // Login user by setting the token only if it's a login
+          login(response.data.token);
           navigate("/jsonform"); // Navigate only if it's a login
         }
+
+        setDialogContent(message);
+        setDialogOpen(true);
       } else {
         // Handle other successful responses without a token (if any)
         setDialogContent("Success, but no token received.");
