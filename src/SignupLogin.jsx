@@ -2255,17 +2255,18 @@ const SignupLogin = () => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
         PaperProps={{
-          style: { backgroundColor: "#000", color: "#fff" }, // Set background color to black
+          style: { backgroundColor: "#000", color: "white" }, // Set background color to black
         }}
+        sx={{color:"white"}}
       >
         <DialogTitle id="alert-dialog-title">{"Server Response"}</DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
+          <DialogContentText id="alert-dialog-description" sx={{color:"white"}}>
             {dialogContent}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseDialog} color="primary">
+          <Button onClick={handleCloseDialog} color="primary" sx={{color:"white"}}>
             Okay
           </Button>
         </DialogActions>
