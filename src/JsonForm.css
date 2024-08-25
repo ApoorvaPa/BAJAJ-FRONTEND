@@ -1,0 +1,81 @@
+/* JsonForm.css */
+
+.jsonform-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1c1c1c, #282828);
+  padding: 20px;
+}
+
+.jsonform-card {
+  background-color: #242424;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.jsonform-container .MuiTypography-root {
+  color: #e0e0e0;
+}
+
+.jsonform-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  background-color: #333333;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.MuiTextField-root .MuiInputLabel-root {
+  color: #bbbbbb;
+}
+
+.MuiTextField-root .MuiOutlinedInput-notchedOutline {
+  border-color: #444444;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #00b4d8;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #00b4d8;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: #00b4d8;
+}
+
+.MuiButton-root {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: #ffffff;
+  transition: background 0.3s ease;
+}
+
+.MuiButton-root:hover {
+  background: linear-gradient(135deg, #005f8a, #008cba);
+}
+
+.MuiSelect-root {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.MuiChip-root {
+  background-color: #0077b6;
+  color: #ffffff;
+}
+
+.MuiOutlinedInput-root {
+  background-color: #333333;
+  border-radius: 5px;
+  color: #ffffff;
+}

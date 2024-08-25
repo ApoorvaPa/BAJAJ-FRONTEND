@@ -1,0 +1,185 @@
+/* SignupLogin.css
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121212;
+  padding: 20px;
+}
+
+.auth-container .MuiCard-root {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.auth-container .MuiTypography-root {
+  color: #ffffff;
+}
+
+.ToggleGroup {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ToggleGroup .MuiToggleButton-root {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.ToggleGroup .Mui-selected {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.username,
+.firstname,
+.lastname,
+.email,
+.rollno,
+.password {
+  margin-bottom: 20px;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  background-color: #333333;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.MuiTextField-root .MuiInputLabel-root {
+  color: #999999;
+}
+
+.MuiTextField-root .MuiOutlinedInput-notchedOutline {
+  border-color: #444444;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #666666;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #777777;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: #cccccc;
+}
+
+.MuiIconButton-root {
+  color: #ffffff;
+}
+
+.login,
+.signup {
+  text-align: center;
+}
+
+.login .MuiButton-root,
+.signup .MuiButton-root {
+  background-color: #0099cc;
+  color: #ffffff;
+}
+
+.login .MuiButton-root:hover,
+.signup .MuiButton-root:hover {
+  background-color: #006699;
+} */
+/* SignupLogin.css */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1c1c1c, #282828);
+  padding: 20px;
+}
+
+.auth-container .MuiCard-root {
+  background-color: #242424;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+}
+
+.auth-container .MuiTypography-root {
+  color: #e0e0e0;
+}
+
+.ToggleGroup {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ToggleGroup .MuiToggleButton-root {
+  color: #e0e0e0;
+  border: 1px solid #555555;
+  background-color: #333333;
+}
+
+.ToggleGroup .Mui-selected {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: #ffffff !important;
+}
+
+.username,
+.firstname,
+.lastname,
+.email,
+.rollno,
+.password {
+  margin-bottom: 20px;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  background-color: #333333;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.MuiTextField-root .MuiInputLabel-root {
+  color: #bbbbbb;
+}
+
+.MuiTextField-root .MuiOutlinedInput-notchedOutline {
+  border-color: #444444;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #00b4d8;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #00b4d8;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: #00b4d8;
+}
+
+.MuiIconButton-root {
+  color: #00b4d8;
+}
+
+.login,
+.signup {
+  text-align: center;
+}
+
+.login .MuiButton-root,
+.signup .MuiButton-root {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: #ffffff;
+  transition: background 0.3s ease;
+}
+
+.login .MuiButton-root:hover,
+.signup .MuiButton-root:hover {
+  background: linear-gradient(135deg, #005f8a, #008cba);
+}
