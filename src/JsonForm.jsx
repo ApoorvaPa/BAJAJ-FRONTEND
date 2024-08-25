@@ -16,6 +16,7 @@ import {
   Checkbox,
   ListItemIcon,
   ListItemText,
+  CircularProgress,
 } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import CheckIcon from "@mui/icons-material/Check";
@@ -27,6 +28,7 @@ const JsonForm = () => {
   const [filter, setFilter] = useState([]);
   const [error, setError] = useState(null);
   const [response, setResponse] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleJsonInputChange = (event) => {
     setJsonInput(event.target.value);
@@ -48,6 +50,7 @@ const JsonForm = () => {
 
   const handleSubmit = async () => {
     try {
+      setLoading(true); // Start loading spinner
       const parsedJson = JSON.parse(jsonInput);
       setError(null);
       const token = localStorage.getItem("authToken");
@@ -68,6 +71,8 @@ const JsonForm = () => {
       } else {
         setError("API request failed. Please try again.");
       }
+    } finally {
+      setLoading(false); // Stop loading spinner
     }
   };
 
@@ -90,8 +95,16 @@ const JsonForm = () => {
             />
           </div>
           <div className="jsonform-submit">
-            <Button variant="contained" color="primary" onClick={handleSubmit}>
-              Submit
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit}
+              disabled={loading} // Disable button when loading
+              startIcon={
+                loading ? <CircularProgress size={20} color="inherit" /> : null
+              } // Add spinner icon
+            >
+              {loading ? "Submitting..." : "Submit"}
             </Button>
           </div>
           {response && (

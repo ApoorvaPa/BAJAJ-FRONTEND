@@ -16,6 +16,7 @@ import {
   DialogTitle,
   useTheme,
   useMediaQuery,
+  CircularProgress,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -51,6 +52,7 @@ const SignupLogin = () => {
   const [rollNo, setRollNo] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogContent, setDialogContent] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
 
@@ -66,6 +68,7 @@ const SignupLogin = () => {
 
   const handleSubmit = async (e, isSignUp) => {
     e.preventDefault();
+    setLoading(true); // Start loading spinner
     const url = `https://bajaj-backend-ybma.onrender.com/${
       isSignUp ? "signup" : "login"
     }`;
@@ -106,6 +109,8 @@ const SignupLogin = () => {
         `Error ${isSignUp ? "signing up" : "logging in"}. Please try again.`
       );
       setDialogOpen(true);
+    } finally {
+      setLoading(false); // Stop loading spinner
     }
   };
 
@@ -236,6 +241,10 @@ const SignupLogin = () => {
               fullWidth
               variant="contained"
               sx={{ mt: 1, mb: 2 }}
+              disabled={loading} // Disable button when loading
+              startIcon={
+                loading ? <CircularProgress size={24} color="primary" /> : null
+              } // Add white spinner icon
             >
               {mode === "signin" ? "Sign In" : "Sign Up"}
             </Button>
